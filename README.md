@@ -1,4 +1,4 @@
-<h1 align="center">Fake Influencer Detector</h1>
+# Fake Influencer Detector
 
 <p align="center">
   Detect fake and suspicious Instagram influencers using data analysis.
@@ -13,28 +13,31 @@
 
 ## 📌 Overview
 
-Fake Influencer Detector is a data analysis project built using Python and Pandas that identifies fake or suspicious Instagram accounts based on engagement patterns and follower behavior.
+**Fake Influencer Detector** is a data analysis project built using **Python** and **Pandas** that identifies fake or suspicious Instagram influencers based on engagement patterns and follower behavior.
 
 The system analyzes:
-- Engagement Rate
-- Like Ratio
-- Follower Count
 
-and classifies influencers into:
-- Genuine Influencer
-- Suspicious Influencer
-- Fake Influencer
+* Engagement Rate
+* Like Ratio
+* Follower Count
+
+Based on these metrics, influencers are classified into:
+
+* ✅ Genuine Influencer
+* ⚠️ Suspicious Influencer
+* ❌ Fake Influencer
 
 ---
 
 ## ⚡ Key Features
 
-- 📊 Data Cleaning & Preprocessing
-- 📈 Engagement Rate Analysis
-- ❤️ Like Ratio Calculation
-- 🧠 Rule-Based + Score-Based Classification
-- 🎯 Adaptive logic for small to mega (I saved them!!!!)
-influencershttps://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbTljNDYzdWFwNDhqaTdma2VtOWF2YzVhajkweDBlNzc0dHoydGhkYiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/5xtDarwEPSrmbvS0dHy/giphy.gif
+* 📊 Data Cleaning & Preprocessing
+* 📈 Engagement Rate Analysis
+* ❤️ Like Ratio Calculation
+* 🧠 Rule-Based + Score-Based Classification
+* 🎯 Adaptive logic for small to mega influencers
+* 🗂 CSV Dataset Processing
+* ⚡ Lightweight and fast execution
 
 ---
 
@@ -42,9 +45,10 @@ influencershttps://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbTljNDYzdWFwNDhqaTdm
 
 The system uses a **multi-factor scoring approach**:
 
-- Engagement rate (likes + comments vs followers)
-- Like ratio (likes vs followers)
-- Follower size segmentation
+* Engagement Rate (likes + comments vs followers)
+* Like Ratio (likes vs followers)
+* Follower size segmentation
+* Score-based classification rules
 
 Larger influencers are evaluated differently to avoid bias due to naturally lower engagement rates.
 
@@ -52,52 +56,91 @@ Larger influencers are evaluated differently to avoid bias due to naturally lowe
 
 ## 📂 Project Structure
 
+```
 Fake Influencer Detector/
 │
 ├── main.py
 ├── top_insta_influencers_data.csv
 └── README.md
+```
 
 ---
 
 ## ▶️ Getting Started
 
-### 1. Clone the repository
+### 1️⃣ Clone the repository
 
 ```bash
 git clone https://github.com/divyanshsinghtomar-official/fake-influencer-detector.git
 cd fake-influencer-detector
+```
+
+### 2️⃣ Install dependencies
+
+```bash
+pip install pandas numpy
+```
+
+### 3️⃣ Run the project
+
+```bash
+python main.py
+```
 
 ---
 
-## ▶️ Getting Started
+## 📊 Example Output
 
-1. Clone the repository
-git clone https://github.com/YOUR_USERNAME/fake-influencer-detector.git
-cd fake-influencer-detector
+The script processes influencer data and classifies them as:
 
-2. Install dependencies
-pip install pandas numpy
+* Genuine
+* Suspicious
+* Fake
 
-3. Run the project
-python main.py
+You will see results printed in the terminal after execution.
 
-<img width="464" height="159" alt="image" src="https://github.com/user-attachments/assets/8e56724d-188a-4d2a-8069-2464c86ebd9e" />
+<img width="472" height="154" alt="image" src="https://github.com/user-attachments/assets/e210eae3-bd01-4a0c-9611-dc8ad7e3c3f6" />
 
-📈 Future Improvements
-Add data visualization (matplotlib)
-Integrate machine learning model
-Real-time Instagram data integration
 
-⚠️ Disclaimer
+---
 
-This project is for educational and analytical purposes only.
+## 📈 Future Improvements
+
+* Add data visualization using Matplotlib
+* Integrate machine learning model
+* Real-time Instagram data integration
+
+---
+
+## ⚠️ Disclaimer
+
+This project is for **educational and analytical purposes only**.
 The classification is based on heuristic rules and may not reflect real-world accuracy.
 
-🙌 Author
+---
 
-Divyansh Singh Tomar 
+## 🙌 Author
 
-⭐ Support
+**Divyansh Singh Tomar**
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Feel free to:
+
+* Fork the repository
+* Create a new branch
+* Submit a pull request
+
+---
+
+## ⭐ Support
 
 If you found this project useful, consider giving it a ⭐ on GitHub!
+
+---
+
+## 📜 License
+
+This project is open-source and available under the **MIT License**.
