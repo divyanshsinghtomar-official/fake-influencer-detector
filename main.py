@@ -1,4 +1,5 @@
 import pandas as pd
+import matplotlib.pyplot as plt 
 
 df = pd.read_csv("top_insta_influencers_data.csv")
 
@@ -90,4 +91,55 @@ def categorize_influencer(row):
         return "Genuine Influencer"
     
 df["influencer_type"] = df.apply(categorize_influencer, axis=1)
-print(df[["influencer_type", "username"]].head())
+
+# Convert followers to M/B format using loop
+def convert_followers_to_text(value):
+    """Convert number to M/B format"""
+    if value >= 1_000_000_000:
+        return f'{value/1_000_000_000:.1f}B'
+    else:
+        return f'{value/1_000_000:.0f}M'
+
+follower_labels = []
+for follower in df["followers"]:
+    label = convert_followers_to_text(follower)
+    follower_labels.append(label)
+
+df["followers_label"] = follower_labels
+
+print(df[["influencer_type", "username", "followers_label"]])
+
+color_map = {
+    "Genuine Influencer": "green",
+    "Suspicious Influencer": "orange",
+    "Fake Influencer": "red"
+}
+
+df["color"] = df["influencer_type"].map(color_map)
+
+plt.figure(figsize=(12, 8), dpi=100)
+
+for influencer_type, color in color_map.items():
+    mask = df["influencer_type"] == influencer_type
+    plt.scatter(
+        df[mask]["followers"], 
+        df[mask]["engagement"], 
+        c=color, 
+        label=influencer_type,
+        alpha=0.6,
+        s=80,
+        edgecolors='black',
+        linewidth=0.5
+    )
+
+plt.xscale('log')
+
+plt.xlabel("Followers" , fontsize=12)
+plt.ylabel("Engagement Rate (%)", fontsize=12)
+plt.title("Influencer Analysis: Genuine vs Suspicious vs Fake", fontsize=14, fontweight='bold')
+plt.legend(loc='upper right', fontsize=11)
+plt.grid(True, alpha=0.3)
+plt.tight_layout()
+plt.show()
+
+print(df[["influencer_type", "username", "followers_label"]].head(10))
